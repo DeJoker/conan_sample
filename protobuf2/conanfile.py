@@ -4,7 +4,7 @@ import shutil
 
 
 class ProtobufConan(ConanFile):
-    name = "Protobuf"
+    name = "protobuf"
     version = "2.6.1"
     url = "https://github.com/memsharded/conan-protobuf.git"
     license = "https://github.com/google/protobuf/blob/v2.6.1/LICENSE"
@@ -12,7 +12,7 @@ class ProtobufConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     exports = "CMakeLists.txt", "lib*.cmake", "extract_includes.bat.in", "protoc.cmake", "tests.cmake", "change_dylib_names.sh"
     options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = "shared=False", "fPIC=True"
+    default_options = "shared=True", "fPIC=True"
     generators = "cmake"
 
     def config(self):
